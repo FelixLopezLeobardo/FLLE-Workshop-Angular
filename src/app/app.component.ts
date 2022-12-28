@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from './auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'mi-proyecto-FLLE';
+
+  constructor(private autService : AuthService, private router: Router){
+
+  }
+
+  isAuthenticated(): boolean{
+    return this.autService.isLoggedIn();
+  }
+
+  logout():void{
+    this.autService.logout();
+    this.router.navigate(['/login']);
+  }
+
 }

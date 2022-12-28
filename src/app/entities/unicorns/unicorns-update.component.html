@@ -1,0 +1,63 @@
+<div fxLayout="row" fxLayoutAlign="start center" mat-dialog-title class="px-6 py-4 bg-primary">
+    <h2 class="title m-0 text-white" fxFlex = "auto"> {{unicorn?.name || 'Formulario' }} </h2>
+    <!-- <button mat-dialog-close mat-icon-button type="button" class="text-secondary" >
+        <mat-icon>Close</mat-icon>
+
+    </button> -->
+
+</div>
+
+<mat-divider class="mx-6 text-border"></mat-divider>
+
+<mat-dialog-content class="px-6 py-4" fxLayout="column" fxLayoutAlign="start center">
+   <mat-card class="w-100">
+
+    <mat-card-content>
+        <form class="example-container" #ngForm="ngForm">
+
+
+            <!-- <app-input-data-component  [ph]="'Nombre'" [typeInput]="'text'" [val]="'unicorn?.name'" (inputData)="getData($event)" >
+    
+            </app-input-data-component>
+            <app-input-data-component  [ph]="'Color'" [typeInput]="'text'" [val]="'unicorn?.colour'" (inputData)="getData($event)" >
+    
+            </app-input-data-component>
+            <app-input-data-component  [ph]="'nombre'" [typeInput]="'text'" [val]="'unicorn?.name'" (inputData)="getData($event)" >
+    
+            </app-input-data-component> -->
+            <mat-form-field class="w-100">
+                <input matInput placeholder="Nombre" [(ngModel)]="unicorn.name" name="name" #name="ngModel" required>
+                <!-- <mat-error *ngIf="name.invalid && (name.dirty || name.touched)">
+                  el campo no es valido
+                </mat-error> -->
+              </mat-form-field>
+              <mat-form-field class="w-100">
+                <input matInput placeholder="Edad" [(ngModel)]="unicorn.age" name="age" #age="ngModel" required type="number">
+                <!-- <mat-error *ngIf="age.invalid && (age.dirty || age.touched)">
+                  el campo no es valido
+                </mat-error> -->
+              </mat-form-field>
+              <mat-form-field class="w-100">
+                <input matInput placeholder="Color" [(ngModel)]="unicorn.colour" name="color" #color="ngModel" required>
+                <!-- <mat-error *ngIf="color.invalid && (color.dirty || color.touched)">
+                  el campo no es valido
+                </mat-error> -->
+              </mat-form-field>
+        </form>
+    </mat-card-content>
+
+<mat-divider class="mx-6 text-border"></mat-divider>
+    
+<mat-divider class="mx-6 text-border"></mat-divider>
+
+<mat-dialog-actions aling="end">
+  <button mat-button type="button" class="text-primary" (click)="save()" [disabled]="ngForm.invalid">Guardar</button>
+  <button mat-button mat-dialog-close type="button" class="text-primary" cdkFocusInitial color="warn" (click)="closeDialog()"  >Cancelar</button>
+</mat-dialog-actions>
+
+   <!-- </mat-card>
+</mat-dialog-content>
+<mat-divider  class="mx-6 text-border"></mat-divider>
+<mat-dialog-actions align="end">
+    <button cdkFocusInitial color="warn" mat-button mat-dialog-close type="button" >Cerrar</button>
+</mat-dialog-actions> -->

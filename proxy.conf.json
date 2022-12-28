@@ -1,0 +1,13 @@
+{  
+    "/unicornios/*" : {
+
+        "target": "https://crudcrud.com/api",
+
+        "secure": false,
+
+        "changeOrigin": true,
+
+        "pathRewrite": {"^/unicornios/" : ""}
+
+    }
+}
